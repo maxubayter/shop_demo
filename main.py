@@ -17,6 +17,7 @@ result = get_bot_updates(100, 0)
 print(result)
 message_id = 1
 
+
 #прием данных от криптонатора
 def currancy(coin):
     if coin == "/btc":
@@ -30,7 +31,7 @@ def currancy(coin):
         decoded_coin = result_coin.json()
         decoded_coin = decoded_coin['ticker']['price'] + " $"
     elif coin == "/start":
-        decoded_coin = "Бот выводит курс криптовалют bitcoin и ethereum с ресурса https://ru.cryptonator.com/ . Для получения актуального курса на данный момент времени, введите в чате /btc (для биткоина), /eth (для эфириума)"
+        decoded_coin = "Бот выводит курс криптовалют bitcoin и ethereum с ресурса https://ru.cryptonator.com/. Для получения актуального курса на данный момент времени, введите в чате /btc (для биткоина), /eth (для эфириума)"
     else:
         decoded_coin = "wrong coin"
        
