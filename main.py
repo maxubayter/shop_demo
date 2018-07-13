@@ -29,6 +29,13 @@ def get_cryptonator(coin):
 while True:         
     for item in result:
         message_id = item["update_id"]
+        #проверка на сообщение с картинками или их изменения
+        if item.get('message') == None:
+            break           
+        message_dic = item['message']
+        if message_dic.get('text') == None:
+            break
+        #проверяем входящее сообщение и передаем соответствующий запрос криптонанору
         message_text = item['message']['text']
         print(message_text)
         if message_text in coins_list:
